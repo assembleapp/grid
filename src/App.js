@@ -16,13 +16,10 @@ function App() {
           {model => (
             <Grid
             columns={[
-              {key: 'id', name: 'ID'},
-              {key: 'title', name: 'Title'},
+              {key: 'name', name: 'Name'},
+              {key: 'address', name: 'Address'},
             ]}
-            rows={[
-              { id: 0, title: 'Example'},
-              { id: 1, title: 'Demo'},
-            ]}
+            rows={model.companies.toJSON()}
             />
           )}
         </Scope>
