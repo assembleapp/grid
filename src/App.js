@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Grid from "react-data-grid"
-import "react-data-grid/dist/react-data-grid.css"
+import "./hierarch/grid.css"
 import styled from "styled-components"
 
 import Scope from "./hierarch/scope"
