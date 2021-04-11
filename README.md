@@ -20,8 +20,8 @@ and is inspired by [AirTable] and [FireTable].
 ## Run on a local machine
 
 ```bash
-git clone https://github.com/assembleapp/hierarch-grid.git
-cd hierarch-grid
+git clone https://github.com/assembleapp/grid.git
+cd grid
 yarn
 yarn start
 ```
