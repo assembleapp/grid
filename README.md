@@ -2,6 +2,8 @@
 
 A [Hierarch engine](https://github.com/assembleapp/hierarch) cylinder.
 
+![A grid displaying company records](./images/basic.png)
+
 Organize records using a common grid-based experience,  
 such as you see in spreadsheet programs and relational databases.
 
