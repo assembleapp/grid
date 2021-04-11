@@ -6,14 +6,17 @@ import { getMainDefinition } from "apollo-utilities"
 import { setContext } from "apollo-link-context"
 import { split } from "apollo-link"
 
+var hasura_address = process.env.REACT_APP_URL_HASURA
+  || "assemble-public.herokuapp.com/v1/graphql"
+var hasura_passcode = process.env.REACT_APP_HASURA_PASSCODE
+
 const wsLink = new WebSocketLink({
-  uri: `ws://${process.env.REACT_APP_URL_HASURA}`,
+  uri: `ws://${hasura_address}`,
   options: {
     reconnect: true,
     connectionParams: {
       headers: {
-        // TODO is this needed if used alongside authLink?
-        "x-hasura-access-key": process.env.REACT_APP_HASURA_PASSCODE,
+        "x-hasura-access-key": hasura_passcode,
       }
     }
   },
@@ -21,13 +24,13 @@ const wsLink = new WebSocketLink({
 })
 
 const httpLink = createHttpLink({
-  uri: `https://${process.env.REACT_APP_URL_HASURA}`
+  uri: `https://${hasura_address}`
 })
 
 const authLink = setContext((_, { headers }) => (
   { headers: {
     ...headers,
-      "x-hasura-access-key": process.env.REACT_APP_HASURA_PASSCODE,
+      "x-hasura-access-key": hasura_passcode,
   } }
 ))
 
